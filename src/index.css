@@ -1,0 +1,115 @@
+/* 🎨 index.css */
+
+
+/* === Import Google Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* === CSS RESET (modern normalize) === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  font: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+}
+
+/* === VARIABLES (DARK THEME) === */
+:root {
+  /* 🎨 Palette from your logo */
+  --color-white: #f8f9f9;
+  --color-cyan: #39b8bf;
+  --color-dark-blue: #041421;
+  --color-teal-dark: #11727e;
+  --color-teal-mid: #1c8294;
+  --color-blue-gray: #083648;
+  --color-gray: #848488;
+  --color-green-gray: #385453;
+
+  /* 🌑 Theming */
+  --color-bg: var(--color-dark-blue);
+  --color-bg-alt: var(--color-blue-gray);
+  --color-primary: var(--color-cyan);
+  --color-secondary: var(--color-teal-mid);
+  --color-text: var(--color-white);
+  --color-text-muted: var(--color-gray);
+  --color-border: var(--color-green-gray);
+
+  /* 🅰️ Fonts */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* === Utility styles === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* === Interactive details === */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-dark-blue);
+}
+
+/* Optional: dark scrollbar (looks clean on black bg) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Nav.module.css";
 
-export default function Nav({ animate }) {
+export default function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ export default function Nav({ animate }) {
       </nav>
 
       {/* MENÚ DE ESCRITORIO */}
-      <nav className={`${styles.desktopMenu} ${animate ? styles.animate : ""}`}>
+      <nav className={styles.desktopMenu}>
         <a href="#">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Contacto</a>

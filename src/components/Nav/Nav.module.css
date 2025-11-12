@@ -1,3 +1,6 @@
+
+
+/* === NAVBAR === */
 .navbar {
   margin-top: 20px;
   position: relative;
@@ -8,22 +11,48 @@
   z-index: 1000;
 }
 
-/* === MENÚ DE ESCRITORO === */
+/* === MENÚ DE ESCRITORIO === */
 .desktopMenu {
   display: flex;
-  gap: 3rem; /* más separación entre links */
+  gap: 3rem; /* separación entre links */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.desktopMenu.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Links con animación secuencial */
+.desktopMenu.animate a {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: slideInLink 0.5s forwards;
+}
+
+.desktopMenu.animate a:nth-child(1) { animation-delay: 0.2s; }
+.desktopMenu.animate a:nth-child(2) { animation-delay: 0.4s; }
+.desktopMenu.animate a:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes slideInLink {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .desktopMenu a {
-  color: var(--color-text); /* usa la variable blanca */
-  font-family: var(--font-heading); /* Montserrat */
-  font-weight: 600;
-  font-size: 1.2rem; /* un poco más grande */
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.2rem; 
   transition: color 0.3s ease;
 }
 
 .desktopMenu a:hover {
-  color: var(--color-secondary); /* verde/azulado */
+  color: var(--color-secondary);
 }
 
 /* === BOTÓN HAMBURGUESA === */
@@ -61,7 +90,7 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* === MENÚ MÓVIL (DESPLEGABLE, NO OCUPA TODA LA ALTURA) === */
+/* === MENÚ MÓVIL (DESPLEGABLE) === */
 .mobileMenu {
   position: absolute;
   top: 100%; /* aparece justo debajo del navbar */

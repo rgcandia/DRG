@@ -57,12 +57,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-text); /* Color base para los íconos */
+  color: var(--color-primary); /* Color base para los íconos */
   transition: color 0.3s ease;
 }
 
 .iconLink:hover {
-  color: var(--color-primary); /* Color al pasar el cursor */
+  color: var(--color-text); /* Color al pasar el cursor */
 }
 
 .icon {

@@ -3,6 +3,7 @@ import Nav from '../Nav/Nav'
 export default function Home (){
     return(<div>
         <Nav/>
+        
       <a
         href="https://wa.me/5491156191204"
         className={styles.wafloat}

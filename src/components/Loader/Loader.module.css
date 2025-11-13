@@ -1,0 +1,33 @@
+/* Loader.module.css */
+
+/* Aseguramos que el contenedor ocupe toda la pantalla */
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;    /* Ancho completo de la ventana */
+  height: 100vh;   /* Alto completo de la ventana */
+  background-color: transparent; /* Fondo transparente */
+  position: fixed; /* Fijamos el loader para que esté sobre el contenido */
+  top: 0;
+  left: 0;
+}
+
+/* Estilo del contador */
+.counter {
+  font-family: var(--font-heading, 'Montserrat'), sans-serif; /* Fuente personalizada */
+  font-size: 3rem;  /* Tamaño grande para el texto */
+  color: var(--color-primary);  /* Color del texto acorde a tu paleta */
+  font-weight: bold;  /* Peso en negrita */
+  animation: fadeIn 1s ease-in-out; /* Animación de aparición */
+}
+
+/* Animación para el contador */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

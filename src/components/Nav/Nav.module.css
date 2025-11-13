@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; /* el contenido principal centrado */
+  justify-content: center; /* El contenido principal centrado */
   padding: 1rem 2rem;
   z-index: 1000;
 }
@@ -16,12 +16,10 @@
   top: 0;
   display: flex;
   align-items: center;
- 
 }
 
 .logo {
-
-  height: 150px; 
+  height: 150px;
   width: auto;
   transition: height 0.3s ease;
 }
@@ -45,6 +43,30 @@
   color: var(--color-secondary);
 }
 
+/* === ICONOS DE REDES SOCIALES (Escritorio) === */
+.socialIcons {
+  display: flex;
+  gap: 1.5rem; /* Espacio entre los íconos */
+  position: absolute;
+  right: 2rem; /* Alineado a la derecha */
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text); /* Color base para los íconos */
+  transition: color 0.3s ease;
+}
+
+.iconLink:hover {
+  color: var(--color-primary); /* Color al pasar el cursor */
+}
+
+.icon {
+  font-size: 1.8rem; /* Tamaño de los íconos */
+}
+
 /* === BOTÓN HAMBURGUESA === */
 .burger {
   display: none;
@@ -57,7 +79,7 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 35px; /* alineado con el logo grande */
+  top: 35px;
   z-index: 1100;
 }
 
@@ -84,8 +106,8 @@
 .mobileMenu {
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%; /* ocupa todo el ancho */
+  right: 0;
+  width: 80%;
   background-color: var(--color-bg-alt);
   display: flex;
   flex-direction: column;
@@ -115,17 +137,39 @@
   color: var(--color-secondary);
 }
 
+/* === ICONOS EN EL MENÚ MÓVIL (Fila) === */
+.mobileMenu .socialIconsMobile {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: row; /* Asegurarse de que estén en fila */
+  justify-content: center; /* Centrado horizontal */
+  margin-top: 1rem;
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
+  /* Ocultar los links de escritorio en vista móvil */
   .desktopMenu {
     display: none;
   }
 
+  /* Mostrar el botón hamburguesa */
   .burger {
     display: flex;
   }
 
+  /* Reducir el tamaño del logo en dispositivos móviles */
   .logo {
-    height: 60px; /* más chico en móviles */
+    height: 60px;
+  }
+
+  /* Ocultar los íconos de redes en el menú de escritorio */
+  .socialIcons {
+    display: none;
+  }
+
+  /* Asegurarse de que el menú móvil se muestre */
+  .mobileMenu {
+    padding: 1.5rem 2rem;
   }
 }

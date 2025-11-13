@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importar los íconos de las redes sociales
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -22,6 +23,16 @@ export default function Nav() {
         <a href="#">Contacto</a>
       </nav>
 
+      {/* ICONOS DE REDES SOCIALES EN EL MENÚ DE ESCRITORIO */}
+      <div className={styles.socialIcons}>
+        <a href="#" className={styles.iconLink}>
+          <FaFacebook className={styles.icon} />
+        </a>
+        <a href="#" className={styles.iconLink}>
+          <FaInstagram className={styles.icon} />
+        </a>
+      </div>
+
       {/* BOTÓN HAMBURGUESA */}
       <button
         className={`${styles.burger} ${open ? styles.open : ""}`}
@@ -38,7 +49,18 @@ export default function Nav() {
         <a href="#">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Contacto</a>
+
+        {/* ICONOS DE REDES SOCIALES EN EL MENÚ MÓVIL */}
+        <div className={styles.socialIconsMobile}>
+          <a href="#" className={styles.iconLink}>
+            <FaFacebook className={styles.icon} />
+          </a>
+          <a href="#" className={styles.iconLink}>
+            <FaInstagram className={styles.icon} />
+          </a>
+        </div>
       </nav>
     </header>
   );
 }
+

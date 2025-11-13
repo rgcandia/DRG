@@ -33,7 +33,7 @@
 /* Ajustes para pantallas grandes o dispositivos con pantallas más anchas */
 @media (min-width: 769px) {
   .videoBackground {
-    object-fit: cover; /* Asegura que el video cubra toda el área */
-    object-position: left center; /* Centra el lado izquierdo del video */
+    object-fit: contain; /* Asegura que el video cubra toda el área */
+    object-position: center top ; /* Centra el lado izquierdo del video */
   }
 }

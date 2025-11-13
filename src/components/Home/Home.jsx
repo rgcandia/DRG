@@ -1,8 +1,10 @@
 import styles from './Home.module.css'
 import Nav from '../Nav/Nav'
+import VideoBackground from '../VideoBackground/VideoBackground';
 export default function Home (){
     return(<div>
         <Nav/>
+        <VideoBackground/>
         
       <a
         href="https://wa.me/5491156191204"

@@ -1,0 +1,39 @@
+/* VideoBackground.module.css */
+
+/* Contenedor para el video, que ocupará toda la pantalla */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Hace que el video esté al fondo */
+}
+
+/* Estilo para el video, que se ajustará a toda la pantalla */
+.videoBackground {
+  object-fit: cover; /* Asegura que el video cubra toda el área visible sin importar el tamaño */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-position: left center; /* Ajusta el video para que siempre enfoque el lado izquierdo */
+}
+
+/* Ajustes para pantallas móviles y tablets */
+@media (max-width: 768px) {
+  .videoBackground {
+    object-fit: cover; /* Asegura que el video siga cubriendo todo el espacio */
+    object-position: left center; /* Alinea el video al lado izquierdo */
+  }
+}
+
+/* Ajustes para pantallas grandes o dispositivos con pantallas más anchas */
+@media (min-width: 769px) {
+  .videoBackground {
+    object-fit: cover; /* Asegura que el video cubra toda el área */
+    object-position: left center; /* Centra el lado izquierdo del video */
+  }
+}

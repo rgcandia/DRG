@@ -1,11 +1,14 @@
-import styles from './Home.module.css'
-import Nav from '../Nav/Nav'
+import styles from './Home.module.css';
+import Nav from '../Nav/Nav';
 import VideoBackground from '../VideoBackground/VideoBackground';
-export default function Home (){
-    return(<div>
-        <Nav/>
-        <VideoBackground/>
-        
+
+export default function Home () {
+  return (
+    <div className={styles.homeContainer}>
+      <Nav />
+      
+
+  
       <a
         href="https://wa.me/5491156191204"
         className={styles.wafloat}
@@ -17,5 +20,6 @@ export default function Home (){
           alt="WhatsApp"
         />
       </a>
-    </div>);
+    </div>
+  );
 }

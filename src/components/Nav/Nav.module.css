@@ -2,25 +2,26 @@
 .navbar {
   position: relative;
   width: 100%;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center; /* El contenido principal centrado */
   padding: 1rem 2rem;
   z-index: 1000;
-
+ 
 }
 
 /* === LOGO === */
 .logoContainer {
   position: absolute;
-  left: 1rem;
-  top: 0;
+  left: 0;
+  top: 0px;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 150px;
+  height: 80px;
   width: auto;
   transition: height 0.3s ease;
 }
@@ -161,7 +162,7 @@
 
   /* Reducir el tamaño del logo en dispositivos móviles */
   .logo {
-    height: 90px;
+    height: 50px;
   }
 
   /* Ocultar los íconos de redes en el menú de escritorio */

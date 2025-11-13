@@ -1,18 +1,36 @@
 /* === NAVBAR === */
 .navbar {
-  margin-top: 20px;
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center; /* menú de escritorio centrado */
+  align-items: center;
+  justify-content: center; /* el contenido principal centrado */
   padding: 1rem 2rem;
   z-index: 1000;
+}
+
+/* === LOGO === */
+.logoContainer {
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  display: flex;
+  align-items: center;
+ 
+}
+
+.logo {
+
+  height: 150px; 
+  width: auto;
+  transition: height 0.3s ease;
 }
 
 /* === MENÚ DE ESCRITORIO === */
 .desktopMenu {
   display: flex;
-  gap: 3rem; /* separación entre links */
+  gap: 3rem;
+  justify-content: center;
 }
 
 .desktopMenu a {
@@ -29,7 +47,7 @@
 
 /* === BOTÓN HAMBURGUESA === */
 .burger {
-  display: none; /* se muestra solo en móvil */
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 28px;
@@ -39,7 +57,7 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 35px; /* alineado con el logo grande */
   z-index: 1100;
 }
 
@@ -49,6 +67,7 @@
   height: 3px;
   background-color: var(--color-primary);
   border-radius: 3px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .burger.open span:nth-child(1) {
@@ -61,19 +80,18 @@
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* === MENÚ MÓVIL (DESPLEGABLE) === */
+/* === MENÚ MÓVIL === */
 .mobileMenu {
   position: absolute;
-  top: 100%; /* aparece justo debajo del navbar */
-  right: 20px;
-  width: 200px; /* tamaño fijo */
+  top: 100%;
+  left: 0;
+  width: 100%; /* ocupa todo el ancho */
   background-color: var(--color-bg-alt);
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  padding: 1.5rem;
+  gap: 1.2rem;
+  border-top: 1px solid var(--color-border);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -105,5 +123,9 @@
 
   .burger {
     display: flex;
+  }
+
+  .logo {
+    height: 60px; /* más chico en móviles */
   }
 }

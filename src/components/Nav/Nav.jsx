@@ -6,6 +6,22 @@ export default function Nav() {
 
   return (
     <header className={styles.navbar}>
+      {/* LOGO */}
+      <div className={styles.logoContainer}>
+        <img
+          src="/img/logo.png"
+          alt="Logo"
+          className={styles.logo}
+        />
+      </div>
+
+      {/* MENÚ DE ESCRITORIO */}
+      <nav className={styles.desktopMenu}>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Contacto</a>
+      </nav>
+
       {/* BOTÓN HAMBURGUESA */}
       <button
         className={`${styles.burger} ${open ? styles.open : ""}`}
@@ -19,13 +35,6 @@ export default function Nav() {
 
       {/* MENÚ MÓVIL */}
       <nav className={`${styles.mobileMenu} ${open ? styles.active : ""}`}>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
-      </nav>
-
-      {/* MENÚ DE ESCRITORIO */}
-      <nav className={styles.desktopMenu}>
         <a href="#">Inicio</a>
         <a href="#">Servicios</a>
         <a href="#">Contacto</a>

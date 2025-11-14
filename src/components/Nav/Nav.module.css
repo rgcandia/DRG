@@ -180,16 +180,16 @@
   /* Reducir el tamaño del logo en dispositivos móviles */
   .logo {
     max-width: 50%; /* El logo se ajusta al 50% del tamaño disponible */
-    margin: 0 auto; /* Centrado del logo */
-  }
-
-  /* Ocultar los íconos de redes en el menú de escritorio */
-  .socialIcons {
-    display: none;
+    width: auto; /* Ajuste automático del ancho */
   }
 
   /* Asegurarse de que el menú móvil se muestre */
   .mobileMenu {
     padding: 1.5rem 2rem;
+  }
+
+  /* Ocultar los íconos de redes en el menú de escritorio */
+  .socialIcons {
+    display: none;
   }
 }

@@ -19,6 +19,7 @@ export default function Loader() {
 
   return (
     <div className={styles.loaderContainer}>
+      <img src="/img/logo.png" alt="logo" className={styles.logo}/>
       <div className={styles.counter}>{value}%</div>
     </div>
   );

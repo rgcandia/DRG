@@ -6,7 +6,7 @@ export default function Home () {
   return (
     <div className={styles.homeContainer}>
       <Nav />
-      
+      <VideoBackground/>
 
   
       <a

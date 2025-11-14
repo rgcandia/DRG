@@ -2,7 +2,7 @@
 .navbar {
   position: relative;
   width: 100%;
-  height: 80px;
+  height: 10vh;
   display: flex;
   align-items: center; /* Centra los elementos verticalmente */
   justify-content: space-between; /* Separa el logo, el menú y los íconos de redes */

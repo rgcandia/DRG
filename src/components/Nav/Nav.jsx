@@ -9,14 +9,12 @@ export default function Nav() {
     <header className={styles.navbar}>
       {/* LOGO */}
       <div className={styles.logoContainer}>
-    <img
-    src="/img/logo2.webp"
-    alt="Logo"
-    className={styles.logo}
-    loading="eager" 
-    width="160"    
-    height="80"    
-  />
+        <img
+          src="/img/logo2.webp"
+          alt="Logo"
+          className={styles.logo}
+          loading="eager"
+        />
       </div>
 
       {/* MENÚ DE ESCRITORIO */}
@@ -66,4 +64,3 @@ export default function Nav() {
     </header>
   );
 }
-

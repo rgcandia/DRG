@@ -10,7 +10,7 @@ export default function Nav() {
       {/* LOGO */}
       <div className={styles.logoContainer}>
         <img
-          src="/img/logo2.png"
+          src="/img/logo2.webp"
           alt="Logo"
           className={styles.logo}
         />

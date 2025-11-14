@@ -4,20 +4,18 @@
   width: 100%;
   height: 80px;
   display: flex;
-  align-items: center;
-  justify-content: center; /* El contenido principal centrado */
+  align-items: center; /* Centra los elementos verticalmente */
+  justify-content: space-between; /* Separa el logo, el menú y los íconos de redes */
   padding: 1rem 2rem;
   z-index: 1000;
- 
+
 }
 
 /* === LOGO === */
 .logoContainer {
-  position: absolute;
-  left: 0;
-  top: 0px;
   display: flex;
-  align-items: center;
+  align-items: center; /* Centrado vertical del logo */
+  justify-content: flex-start; /* Alinea el logo a la izquierda */
 }
 
 .logo {
@@ -30,7 +28,8 @@
 .desktopMenu {
   display: flex;
   gap: 3rem;
-  justify-content: center;
+  justify-content: center; /* Centrado de los links del menú */
+  flex-grow: 1; /* Hace que el contenedor del menú ocupe el espacio disponible entre el logo y los íconos */
 }
 
 .desktopMenu a {
@@ -38,35 +37,49 @@
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.2rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Añadido para suavizar la transición de la línea */
+  padding-bottom: 5px; /* Espacio para la línea */
+  position: relative; /* Necesario para posicionar la línea */
 }
 
 .desktopMenu a:hover {
   color: var(--color-secondary);
 }
 
+/* Línea verde debajo de los enlaces */
+.desktopMenu a:hover::after {
+  content: ""; /* Necesario para crear el pseudoelemento */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* El grosor de la línea */
+  background-color: var(--color-secondary)
+}
+
 /* === ICONOS DE REDES SOCIALES (Escritorio) === */
 .socialIcons {
   display: flex;
-  gap: 1.5rem; /* Espacio entre los íconos */
+  gap: 1.5rem;
   position: absolute;
   right: 2rem; /* Alineado a la derecha */
+  align-items: center; /* Centrado vertical de los íconos */
 }
 
 .iconLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary); /* Color base para los íconos */
+  color: var(--color-primary);
   transition: color 0.3s ease;
 }
 
 .iconLink:hover {
-  color: var(--color-text); /* Color al pasar el cursor */
+  color: var(--color-text);
 }
 
 .icon {
-  font-size: 1.8rem; /* Tamaño de los íconos */
+  font-size: 1.8rem;
 }
 
 /* === BOTÓN HAMBURGUESA === */
@@ -81,7 +94,8 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 35px;
+  top: 50%; /* Centra verticalmente en el navbar */
+  transform: translateY(-50%); /* Ajuste preciso para centrar el botón */
   z-index: 1100;
 }
 
@@ -175,3 +189,4 @@
     padding: 1.5rem 2rem;
   }
 }
+

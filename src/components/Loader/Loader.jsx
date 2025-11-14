@@ -35,7 +35,7 @@ export default function Loader({ onLoaded }) {
         loading="eager" 
         // Proporciona dimensiones para evitar el 'Layout Shift'
         width="200"     
-        height="100"   
+        height="200"   
       />
       <div className={styles.counter}>{value}%</div>
     </div>

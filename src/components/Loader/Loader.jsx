@@ -1,26 +1,43 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Loader.module.css";  // Asumiendo que usas módulos CSS
+import styles from "./Loader.module.css";  
 
-export default function Loader() {
-  const [value, setValue] = useState(0);
+export default function Loader({ onLoaded }) {
+  // Estado para el contador simulado
+  const [value, setValue] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setValue((v) => {
-        if (v >= 100) {
-          clearInterval(interval); // Detenemos el contador cuando llega a 100
-          return 100;
-        }
-        return v + 1;
-      });
-    }, 30); // Ajusta la velocidad de incremento aquí (30ms)
-    return () => clearInterval(interval); // Limpiamos el interval al desmontarse
-  }, []);
+  useEffect(() => {
+    // 1. Simulación del contador: cuenta de 0 a 100
+    const interval = setInterval(() => {
+      setValue((v) => {
+        if (v >= 100) {
+          clearInterval(interval);
+          // Notifica al componente padre que la carga (simulada) ha terminado
+          if (onLoaded) {
+            onLoaded();
+          }
+          return 100;
+        }
+        return v + 1;
+      });
+    }, 30); // Incrementa cada 30ms (la cuenta dura 3 segundos)
 
-  return (
-    <div className={styles.loaderContainer}>
-      <img src="/img/logo.webp" alt="logo" className={styles.logo}/>
-      <div className={styles.counter}>{value}%</div>
-    </div>
-  );
+    return () => clearInterval(interval);
+  }, [onLoaded]);
+
+
+  return (
+    <div className={styles.loaderContainer}>
+      <img 
+        src="/img/logo.webp" 
+        alt="logo" 
+        className={styles.logo}
+        // Optimización de carga: "eager" fuerza la carga inmediata
+        loading="eager" 
+        // Proporciona dimensiones para evitar el 'Layout Shift'
+        width="200"     
+        height="100"   
+      />
+      <div className={styles.counter}>{value}%</div>
+    </div>
+  );
 }

@@ -179,7 +179,7 @@
 
   /* Reducir el tamaño del logo en dispositivos móviles */
   .logo {
-    max-width: 50%; /* El logo se ajusta al 50% del tamaño disponible */
+    max-width: 20%; /* El logo se ajusta al 50% del tamaño disponible */
     width: auto; /* Ajuste automático del ancho */
   }
 

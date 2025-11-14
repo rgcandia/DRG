@@ -1,7 +1,6 @@
 /* Aseguramos que el contenedor ocupe toda la pantalla */
 .loaderContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100vw;    /* Ancho completo de la ventana */
@@ -13,30 +12,15 @@
   z-index: 10000; /* Aseguramos que el loader esté sobre el contenido */
 }
 
-/* Logo */
-.logo {
-  max-width: 300px;
-  width: 100%; /* Asegura que el logo se ajuste dentro del contenedor */
-  height: auto; /* Mantiene la proporción original de la imagen */
-  object-fit: contain; /* Evita distorsionar la imagen si no es cuadrada */
-  margin-bottom: 20px;
-}
-
-/* Estilo del contador */
-.counter {
-  font-family: var(--font-heading, 'Montserrat'), sans-serif; /* Fuente personalizada */
-  font-size: 3rem;  /* Tamaño grande para el texto */
-  color: var(--color-primary);  /* Color del texto acorde a tu paleta */
-  font-weight: bold;  /* Peso en negrita */
-  animation: fadeIn 1s ease-in-out; /* Animación de aparición */
-}
-
-/* Animación para el contador */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+/* Estilos del video */
+.video {
+  max-width: 300px;  /* Tamaño máximo del video similar a un logo */
+  width: 100%;       /* El video ocupará hasta el 100% de su contenedor */
+  height: auto;      /* La altura se ajustará para mantener la relación de aspecto */
+  object-fit: contain; /* El video mantendrá su relación de aspecto sin distorsionarse */
+  position: absolute; /* Posicionamos el video sobre el contenedor */
+  top: 50%;           /* Centrado verticalmente */
+  left: 50%;          /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Realiza el ajuste final para centrar */
+  z-index: -1;        /* Aseguramos que el video quede detrás del logo */
 }

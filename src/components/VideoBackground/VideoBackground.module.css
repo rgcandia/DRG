@@ -16,13 +16,3 @@
   
 }
 
-/* Ajustes para pantallas pequeñas (móviles) */
-@media (max-width: 768px) {
-  .videoContainer {
-    height: 60vh; /* Reduce la altura para pantallas móviles */
-  }
-
-  .video {
-    object-position: left; /* Mantén el enfoque en el lado izquierdo en móviles */
-  }
-}

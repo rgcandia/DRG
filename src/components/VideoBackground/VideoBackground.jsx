@@ -13,6 +13,7 @@ const VideoBackground = () => {
         <source src="/video/fondo-pc.mp4" type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>
+
     </div>
   );
 }

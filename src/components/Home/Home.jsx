@@ -1,14 +1,17 @@
 import styles from './Home.module.css';
 import Nav from '../Nav/Nav';
 import VideoBackground from '../VideoBackground/VideoBackground';
+import TextOverlay from '../TextOverlay/TextOverlay'; // Importa tu componente TextOverlay
 
 export default function Home () {
   return (
     <div className={styles.homeContainer}>
       <Nav />
-      <VideoBackground/>
+      <VideoBackground />
+      
+      {/* Colocamos el componente de texto animado sobre el video */}
+      <TextOverlay />
 
-  
       <a
         href="https://wa.me/5491156191204"
         className={styles.wafloat}

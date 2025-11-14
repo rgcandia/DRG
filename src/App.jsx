@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Después de la simulación de carga, termina
-    }, 3000); // Simula la carga durante 3 segundos
+    }, 4000); // Simula la carga durante 3 segundos
     return () => clearTimeout(timer);
   }, []);
 

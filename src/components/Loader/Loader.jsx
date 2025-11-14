@@ -26,15 +26,13 @@ export default function Loader({ onLoaded }) {
 
   return (
     <div className={styles.loaderContainer}>
-      <img 
-        src="/img/logo.webp" 
-        alt="logo" 
-        className={styles.logo}
-        // Optimización de carga: "eager" fuerza la carga inmediata
-        loading="eager" 
-        // Proporciona dimensiones para evitar el 'Layout Shift'
-        width="200"     
-        height="200"    
+      <video
+        src="/video/inicio.mp4" // Ruta al video en la carpeta public
+        className={styles.video}
+        autoPlay // Reproduce el video automáticamente
+        loop // Repite el video indefinidamente
+        muted // Silencia el video si es necesario
+        playsInline // Permite que el video se reproduzca correctamente en móviles
       />
       <div className={styles.counter}>{value}%</div>
     </div>

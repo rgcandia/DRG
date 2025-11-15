@@ -10,7 +10,7 @@ function App() {
   // Precargar video
   useEffect(() => {
     const video = document.createElement("video");
-    video.src = "/video/fondo-pc.mp4";
+    video.src = "/video/fondo.mp4";
     video.preload = "auto";
 
     video.oncanplaythrough = () => {
@@ -26,6 +26,11 @@ function App() {
       setReady(true);
     }
   }, [loading, videoLoaded]);
+
+console.log("videoLoaded:", videoLoaded);
+console.log("loading:", loading);
+console.log("ready:", ready);
+
 
   return (
     <div>

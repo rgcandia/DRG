@@ -10,7 +10,7 @@ const VideoBackground = () => {
         muted
         playsInline
       >
-        <source src="/video/video-fondo.mp4" type="video/mp4" />
+        <source src="/video/fondo.mp4" type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </video>
     </div>

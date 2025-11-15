@@ -11,7 +11,7 @@ const TextOverlay = () => {
     },
     { 
       title: "PC para Oficina y Trabajo",
-      description: "Computadoras silenciosas, rápidas y estables para tareas profesionales, multitarea y uso diario.",
+      description: "Computadoras rápidas y estables para tareas profesionales, multitarea y uso diario.",
       link: "/armados-oficina" 
     },
     { 
@@ -31,7 +31,7 @@ const TextOverlay = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prev => (prev + 1) % messages.length);
-    }, 5000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, []);

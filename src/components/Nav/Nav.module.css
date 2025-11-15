@@ -147,7 +147,7 @@
   position: absolute;
   top: 100%;
   right: 0;
-  width: 80%;
+  width: 100%;
   background-color: var(--color-bg-alt);
   display: flex;
   flex-direction: column;
@@ -174,7 +174,7 @@
 }
 
 .mobileMenu a:hover {
-  color: var(--color-secondary);
+  
 }
 
 /* Iconos dentro del menú móvil */

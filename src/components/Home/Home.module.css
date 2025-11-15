@@ -19,7 +19,7 @@
   height: 60px;
   z-index: 999;
   border-radius: 50%;
-  background-color: #25D366; /* Color verde de WhatsApp */
+background-color: transparent;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 10px;
   display: flex;

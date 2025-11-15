@@ -27,9 +27,6 @@ function App() {
     }
   }, [loading, videoLoaded]);
 
-console.log("videoLoaded:", videoLoaded);
-console.log("loading:", loading);
-console.log("ready:", ready);
 
 
   return (

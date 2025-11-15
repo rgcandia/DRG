@@ -5,6 +5,9 @@
   position: relative;  
   width: 100%;
   min-height: 100vh;
+    display: flex;        /* 🔥 CLAVE */
+  flex-direction: column; /* 🔥 CLAVE */
+  
 }
 
 /* Botón flotante de WhatsApp */

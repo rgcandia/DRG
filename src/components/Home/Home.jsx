@@ -11,7 +11,7 @@ export default function Home () {
       
       {/* Colocamos el componente de texto animado sobre el video */}
       <TextOverlay />
-
+   
       <a
         href="https://wa.me/5491156191204"
         className={styles.wafloat}

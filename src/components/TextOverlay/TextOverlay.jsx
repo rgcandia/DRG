@@ -2,25 +2,29 @@ import React, { useState, useEffect } from "react";
 import styles from './TextOverlay.module.css';
 
 const TextOverlay = () => {
-const messages = [
-  { 
-    text: "Armado de PC Gamer a Medida — Alto rendimiento, RGB, refrigeración avanzada y componentes optimizados", 
-    link: "/armados-gamer" 
-  },
-  { 
-    text: "PC para Oficina y Trabajo — Equipos silenciosos, rápidos y estables para uso profesional", 
-    link: "/armados-oficina" 
-  },
-  { 
-    text: "Reparación de Notebooks y PC — Limpieza, mantenimiento, diagnósticos y mejoras de rendimiento", 
-    link: "/reparacion" 
-  },
-  { 
-    text: "Páginas Web Profesionales — Sitios modernos, rápidos y optimizados para pequeñas y medianas empresas", 
-    link: "/webs" 
-  }
-];
 
+  const messages = [
+    { 
+      title: "Armado de PC Gamer a Medida",
+      description: "Equipos de alto rendimiento con RGB, refrigeración optimizada y componentes seleccionados según tu presupuesto.",
+      link: "/armados-gamer" 
+    },
+    { 
+      title: "PC para Oficina y Trabajo",
+      description: "Computadoras silenciosas, rápidas y estables para tareas profesionales, multitarea y uso diario.",
+      link: "/armados-oficina" 
+    },
+    { 
+      title: "Reparación de Notebooks y PC",
+      description: "Mantenimiento, limpieza profunda, mejoras de rendimiento, diagnósticos y reparaciones completas.",
+      link: "/reparacion" 
+    },
+    { 
+      title: "Páginas Web Profesionales",
+      description: "Sitios rápidos, modernos, optimizados para negocios y completamente adaptables a móviles.",
+      link: "/webs" 
+    }
+  ];
 
   const [index, setIndex] = useState(0);
 
@@ -34,13 +38,24 @@ const messages = [
 
   return (
     <div className={styles.textOverlay}>
-      <p className={styles.text}>{messages[index].text}</p>
+      
+      {/* TÍTULO */}
+      <h2 className={styles.title}>
+        {messages[index].title}
+      </h2>
+
+      {/* DESCRIPCIÓN */}
+      <p className={styles.description}>
+        {messages[index].description}
+      </p>
 
       <a href={messages[index].link} className={styles.btn}>
         Más información
       </a>
+
     </div>
   );
 }
 
 export default TextOverlay;
+

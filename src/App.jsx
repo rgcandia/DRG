@@ -1,41 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import Loader from './components/Loader/Loader'; // Importa tu componente de Loader
+import Loader from './components/Loader/Loader';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [ready, setReady] = useState(false);
 
-  // Función para precargar el video
+  // Precargar video
   useEffect(() => {
-    const preloadVideo = () => {
-      const video = document.createElement('video'); // Crea un elemento video
-      video.src = '/video/fondo-pc.mp4'; // Ruta del video a precargar
-      video.preload = 'auto'; // Establece la propiedad preload a 'auto'
-      
-      video.oncanplaythrough = () => {
-        setVideoLoaded(true); // Cuando el video esté completamente cargado, actualiza el estado
-      };
-      
-      video.load(); // Inicia la carga del video
+    const video = document.createElement("video");
+    video.src = "/video/fondo-pc.mp4";
+    video.preload = "auto";
+
+    video.oncanplaythrough = () => {
+      setVideoLoaded(true);
     };
 
-    preloadVideo();
+    video.load();
   }, []);
 
+  // Cuando Loader termine + video cargado → mostrar Home
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // Después de la simulación de carga, termina
-    }, 4000); // Simula la carga durante 3 segundos
-    return () => clearTimeout(timer);
-  }, []);
+    if (!loading && videoLoaded) {
+      setReady(true);
+    }
+  }, [loading, videoLoaded]);
 
   return (
     <div>
-      {loading || !videoLoaded ? (
-        <Loader /> // Muestra el loader si el video no está cargado o la simulación no ha terminado
+      {!ready ? (
+        <Loader onLoaded={() => setLoading(false)} />
       ) : (
-        <Outlet /> // Muestra las rutas cuando ya esté todo cargado
+        <Outlet />
       )}
     </div>
   );

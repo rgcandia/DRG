@@ -2,8 +2,9 @@
 
 /* Contenedor principal para la página */
 .homeContainer {
-  position: relative; /* Necesario para los elementos posicionados dentro */
-  min-height: 100vh; /* Para asegurar que ocupe toda la altura de la pantalla */
+  position: relative;  
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Botón flotante de WhatsApp */

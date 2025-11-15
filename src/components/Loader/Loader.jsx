@@ -5,12 +5,12 @@ export default function Loader({ onLoaded }) {
   return (
     <div className={styles.loaderContainer}>
       <video
-        src="/video/inicio.mp4" // Ruta al video en la carpeta public
+        src="/video/inicio.mp4"
         className={styles.video}
-        autoPlay // Reproduce el video automáticamente
-        loop // Repite el video indefinidamente
-        muted // Silencia el video
-        playsInline // Permite que el video se reproduzca correctamente en móviles
+        autoPlay
+        muted
+        playsInline
+        onEnded={onLoaded}   // 🔥 dispara loading = false
       />
     </div>
   );

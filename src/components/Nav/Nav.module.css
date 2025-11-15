@@ -2,28 +2,29 @@
 .navbar {
   position: relative;
   width: 100%;
-  height: auto; /* Elimina la altura fija */
+  height: auto;
   display: flex;
-  align-items: center; /* Centra los elementos verticalmente */
-  justify-content: space-between; /* Separa el logo, el menú y los íconos de redes */
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem 2rem;
   z-index: 1000;
-  box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
+  box-sizing: border-box;
+  background-color: black;
 }
 
 /* === LOGO === */
 .logoContainer {
   display: flex;
-  align-items: center; /* Centrado vertical del logo */
-  justify-content: flex-start; /* Alinea el logo a la izquierda */
-  max-width: 100%; /* Asegura que el contenedor no sea más grande que el ancho de su contenedor padre */
-  overflow: hidden; /* Asegura que el logo no sobresalga si es más grande de lo esperado */
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .logo {
-  width: auto; /* Ajusta el ancho automáticamente */
-  max-width: 150px; /* Establece un tamaño máximo para el logo en desktop */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: auto;
+  max-width: 150px;
+  height: auto;
   transition: height 0.3s ease;
 }
 
@@ -31,8 +32,8 @@
 .desktopMenu {
   display: flex;
   gap: 3rem;
-  justify-content: center; /* Centrado de los links del menú */
-  flex-grow: 1; /* Hace que el contenedor del menú ocupe el espacio disponible entre el logo y los íconos */
+  justify-content: center;
+  flex-grow: 1;
 }
 
 .desktopMenu a {
@@ -40,45 +41,49 @@
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.2rem;
-  transition: color 0.3s ease, border-bottom 0.3s ease; /* Añadido para suavizar la transición de la línea */
-  padding-bottom: 5px; /* Espacio para la línea */
-  position: relative; /* Necesario para posicionar la línea */
+  padding-bottom: 5px;
+  position: relative;
+  transition: all 0.25s ease;
+
+  /* ⭐ Neon blanco permanente */
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.7),
+    0 0 6px rgba(255, 255, 255, 0.5),
+    0 0 12px rgba(255, 255, 255, 0.2);
 }
 
+/* === HOVER === */
 .desktopMenu a:hover {
-  color: var(--color-secondary);
+  transform: scale(1.08);
+
+  /* Neon más fuerte */
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6);
 }
 
-/* Línea verde debajo de los enlaces */
-.desktopMenu a:hover::after {
-  content: ""; /* Necesario para crear el pseudoelemento */
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px; /* El grosor de la línea */
-  background-color: var(--color-secondary);
-}
 
-/* === ICONOS DE REDES SOCIALES (Escritorio) === */
+
+/* === ICONOS DE REDES (Escritorio) === */
 .socialIcons {
   display: flex;
   gap: 1.5rem;
   position: absolute;
-  right: 2rem; /* Alineado a la derecha */
-  align-items: center; /* Centrado vertical de los íconos */
+  right: 2rem;
+  align-items: center;
 }
 
 .iconLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-primary);
+  color: var(--color-text);
   transition: color 0.3s ease;
 }
 
 .iconLink:hover {
-  color: var(--color-text);
+  color: var(--color-primary);
 }
 
 .icon {
@@ -97,8 +102,8 @@
   cursor: pointer;
   position: absolute;
   right: 20px;
-  top: 50%; /* Centra verticalmente en el navbar */
-  transform: translateY(-50%); /* Ajuste preciso para centrar el botón */
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 1100;
 }
 
@@ -156,39 +161,34 @@
   color: var(--color-secondary);
 }
 
-/* === ICONOS EN EL MENÚ MÓVIL (Fila) === */
+/* Iconos dentro del menú móvil */
 .mobileMenu .socialIconsMobile {
   display: flex;
   gap: 1.5rem;
-  flex-direction: row; /* Asegurarse de que estén en fila */
-  justify-content: center; /* Centrado horizontal */
+  flex-direction: row;
+  justify-content: center;
   margin-top: 1rem;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  /* Ocultar los links de escritorio en vista móvil */
   .desktopMenu {
     display: none;
   }
 
-  /* Mostrar el botón hamburguesa */
   .burger {
     display: flex;
   }
 
-  /* Reducir el tamaño del logo en dispositivos móviles */
   .logo {
-    max-width: 30%; /* El logo se ajusta al 50% del tamaño disponible */
-    width: auto; /* Ajuste automático del ancho */
+    max-width: 30%;
+    width: auto;
   }
 
-  /* Asegurarse de que el menú móvil se muestre */
   .mobileMenu {
     padding: 1.5rem 2rem;
   }
 
-  /* Ocultar los íconos de redes en el menú de escritorio */
   .socialIcons {
     display: none;
   }

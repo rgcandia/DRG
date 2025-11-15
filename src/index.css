@@ -51,7 +51,7 @@ button, input, textarea, select {
 /* === VARIABLES (DARK THEME) === */
 :root {
   /* 🎨 Palette from your logo */
-  --color-white: #f8f9f9;
+  --color-white:   #fff;;
   --color-cyan: #39b8bf;
   --color-dark-blue: #041421;
   --color-teal-dark: #11727e;

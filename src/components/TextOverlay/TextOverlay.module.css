@@ -1,60 +1,109 @@
 .textOverlay {
-  position: fixed; /* Fija el texto en la pantalla */
-  top: 50%; /* Centrado verticalmente */
-  left: 0; /* Alineado a la izquierda del contenedor */
-  right: 0; /* Alineado a la derecha del contenedor */
-  margin-left: auto; /* Márgenes automáticos para centrar */
-  margin-right: auto; /* Márgenes automáticos para centrar */
-  transform: translateY(-50%); /* Ajuste fino para centrar verticalmente */
-  text-align: center; /* Centrado del texto */
-  font-size: 2rem; /* Tamaño del texto */
-  font-family: 'Montserrat', sans-serif; /* Fuente moderna */
-  font-weight: bold;
-  z-index: 10; /* Asegura que el texto esté por encima del video */
-  width: 80%; /* Ancho adaptable, puede usar 100% si prefieres todo el ancho */
-  height: 100px;
-  padding: 1rem; /* Padding para darle espacio al texto */
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para mejorar legibilidad */
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Sombra suave */
-  animation: slideUpFadeIn 1s ease-out; /* Animación */
-  opacity: 0; /* Inicialmente invisible */
-  animation-fill-mode: forwards; /* Mantiene el estado final de la animación */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  width: 80%;
+  padding: 1.6rem 1.2rem;
+
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 10px;
+  z-index: 10;
+
+  animation: slideUpFadeIn 1s ease-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Ajustes de estilo para el texto */
+/* === TEXTO SUAVE (SIN NEÓN PESADO) === */
 .text {
   margin: 0;
   padding: 0;
-  font-size: 1.8rem; /* Ajuste de tamaño para que se vea bien */
-  line-height: 1.5;
-  font-weight: normal;
-  color: white;
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+
+  /* Sombra muy ligera, casi imperceptible (bajo consumo) */
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.35);
 }
 
-/* Animación de deslizamiento y aparición */
+/* === BOTÓN NEÓN FUERTE === */
+.btn {
+  margin-top: 1.2rem;
+  display: inline-block;
+
+  padding: 0.6rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+
+  border: 2px solid #00f0ff;
+  border-radius: 6px;
+
+  transition: all 0.3s ease;
+
+  /* NEÓN FUERTE */
+  text-shadow: 0 0 6px rgba(0, 255, 255, 0.9);
+
+  box-shadow:
+    0 0 8px rgba(0, 255, 255, 0.8),
+    0 0 18px rgba(0, 255, 255, 0.6);
+}
+
+.btn:hover {
+  transform: scale(1.09);
+
+  box-shadow:
+    0 0 14px rgba(0, 255, 255, 1),
+    0 0 28px rgba(0, 255, 255, 0.9),
+    0 0 48px rgba(0, 255, 255, 0.7);
+}
+
+/* === ANIMACIÓN === */
 @keyframes slideUpFadeIn {
   0% {
-    transform: translateY(50px); /* El texto comienza desplazado hacia abajo */
-    opacity: 0; /* Comienza invisible */
+    transform: translate(-50%, -40%);
+    opacity: 0;
   }
   100% {
-    transform: translateY(0); /* El texto se mueve a su posición final */
-    opacity: 1; /* Se hace visible */
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
 }
 
-/* Ajustes para pantallas pequeñas */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .textOverlay {
-    font-size: 1.5rem; /* Reducir el tamaño en pantallas móviles */
-    width: 90%; /* Ajustar el ancho en dispositivos pequeños */
+    width: 90%;
+    padding: 1.2rem;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .textOverlay {
-    font-size: 1.2rem; /* Reducir aún más en pantallas muy pequeñas */
-    width: 100%; /* Hacer el texto ocupar todo el ancho */
+  .text {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.45rem 1.1rem;
   }
 }

@@ -1,30 +1,44 @@
 import React, { useState, useEffect } from "react";
-import styles from './TextOverlay.module.css'; // Importa el CSS del componente
+import styles from './TextOverlay.module.css';
 
 const TextOverlay = () => {
-  const messages = [
-    "Bienvenido a DRG Soporte Técnico",
-    "Ofrecemos promociones especiales",
-    "Contáctanos para más información",
-    "Reparación rápida y eficiente"
-  ];
+const messages = [
+  { 
+    text: "Armado de PC Gamer a Medida — Alto rendimiento, RGB, refrigeración avanzada y componentes optimizados", 
+    link: "/armados-gamer" 
+  },
+  { 
+    text: "PC para Oficina y Trabajo — Equipos silenciosos, rápidos y estables para uso profesional", 
+    link: "/armados-oficina" 
+  },
+  { 
+    text: "Reparación de Notebooks y PC — Limpieza, mantenimiento, diagnósticos y mejoras de rendimiento", 
+    link: "/reparacion" 
+  },
+  { 
+    text: "Páginas Web Profesionales — Sitios modernos, rápidos y optimizados para pequeñas y medianas empresas", 
+    link: "/webs" 
+  }
+];
 
-  const [currentMessage, setCurrentMessage] = useState(messages[0]);
+
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentMessage(prev => {
-        const currentIndex = messages.indexOf(prev);
-        return messages[(currentIndex + 1) % messages.length];
-      });
-    }, 5000); // Cambia el texto cada 5 segundos
+      setIndex(prev => (prev + 1) % messages.length);
+    }, 5000);
 
-    return () => clearInterval(interval); // Limpia el intervalo cuando el componente se desmonta
-  }, [messages]);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className={styles.textOverlay}>
-      <p className={styles.text}>{currentMessage}</p>
+      <p className={styles.text}>{messages[index].text}</p>
+
+      <a href={messages[index].link} className={styles.btn}>
+        Más información
+      </a>
     </div>
   );
 }

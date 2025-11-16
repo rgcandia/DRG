@@ -11,7 +11,20 @@ const router = createBrowserRouter([
     path: "/",
   
     element: <App />, 
-    errorElement: <div>¡Error 404! Página no encontrada.</div>, 
+    errorElement: <div 
+  style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+  }}
+>
+  <img 
+    src="/img/dragon-404.png" 
+    style={{ maxWidth: '100%', height: 'auto' }}
+  />
+</div>
+, 
    children:[
     {
       path:'/',

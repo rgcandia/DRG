@@ -143,5 +143,24 @@
 }
 
 @media (max-width: 500px) {
-  .imageWrap { display: none; }
+  .imageWrap {
+    flex: 0 0 auto;      /* ya no ocupa espacio flexible */
+    width: 80%;           /* ancho relativo al contenedor */
+    max-width: 180px;     /* límite máximo del dragón */
+    min-width: 0;         /* eliminar restricción mínima */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .titleImage {
+    width: 100%;          /* ocupa todo el ancho del wrap */
+    height: auto;
+  }
+
+  .headerRow {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: center;
+  }
 }

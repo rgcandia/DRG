@@ -1,4 +1,16 @@
-/* Header: dragon + texto */
+.serviciosContainer {
+  width: 100%;
+  padding: 0px 20px 60px;
+  background-color: #000;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
 .headerRow {
   width: 100%;
   max-width: 1200px;
@@ -17,6 +29,7 @@
   align-items: center;
   min-width: 200px; /* evita que se aplaste demasiado */
 }
+
 
 .titleImage {
   width: 100%;         /* ocupa todo el ancho disponible */
@@ -64,7 +77,116 @@
   opacity: 0.95;
 }
 
-/* Responsive */
+/* ===================================================== */
+/* === CARDS GRID 3 → 2 → 1 === */
+/* ===================================================== */
+
+.cardsWrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
+}
+
+/* === CARD === */
+.card {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 234, 255, 0.12);
+  backdrop-filter: blur(4px);
+  text-align: center;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+
+  /* 👉 AHORA el contenido INTERNO es columna */
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 18px rgba(0, 234, 255, 0.35),
+    0 0 30px rgba(0, 234, 255, 0.18);
+}
+
+.icon {
+  filter: drop-shadow(0 0 6px #00eaff);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-shadow: 0 0 4px rgba(0, 234, 255, 0.12);
+}
+
+.card p {
+  margin: 0;
+  color: #dcdcdc;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.btn {
+  margin-top: 10px;
+  align-self: center;
+  padding: 0.48rem 1rem;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid #00eaff;
+  box-shadow:
+    0 0 8px rgba(0, 234, 255, 0.6),
+    0 0 18px rgba(0, 234, 255, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.04);
+  box-shadow:
+    0 0 14px rgba(0,234,255,0.9),
+    0 0 28px rgba(0,234,255,0.7);
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.wafloat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 999;
+  border-radius: 50%;
+  background-color: transparent;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.wafloat img {
+  width: 100%;
+  height: auto;
+}
+
+.wafloat:hover {
+  transform: scale(1.08);
+}
+
+/* ===================================================== */
+/* === BREAKPOINTS === */
+/* ===================================================== */
+
 @media (max-width: 900px) {
   .headerRow {
     flex-direction: row;
@@ -73,9 +195,16 @@
   .titleImage {
     width: 200px;
   }
+
+  /* grid 2 */
+  .cardsWrapper {
+    grid-template-columns: 1fr ;
+  }
+
 }
 
 @media (max-width: 600px) {
+
   .titleImage {
     width: 200px;
   }
@@ -84,16 +213,15 @@
     font-size: 1.6rem;
     text-align: center;
   }
-}
 
+  /* grid 1 */
+  .cardsWrapper {
+    grid-template-columns: 1fr;
+  }
+
+}
 @media (max-width: 500px) {
   .imageWrap {
     display: none;
-  }
-
-  .headerRow {
-    flex-direction: column-reverse;
-    gap: 1rem;
-    align-items: center;
   }
 }

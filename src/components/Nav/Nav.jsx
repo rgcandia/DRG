@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FaFacebook, FaInstagram } from "react-icons/fa"; // Importar los íconos de las redes sociales
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 import styles from "./Nav.module.css";
 
 export default function Nav() {
@@ -8,23 +9,26 @@ export default function Nav() {
   return (
     <header className={styles.navbar}>
       {/* LOGO */}
-      <div className={styles.logoContainer}>
-        <img
-          src="/img/logo2.webp"
-          alt="Logo"
-          className={styles.logo}
-          loading="eager"
-        />
-      </div>
+  <div className={styles.logoContainer}>
+  <Link to="/">
+    <img
+      src="/img/logo2.webp"
+      alt="Logo"
+      className={styles.logo}
+      loading="eager"
+    />
+  </Link>
+</div>
+
 
       {/* MENÚ DE ESCRITORIO */}
       <nav className={styles.desktopMenu}>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
+        <Link to="/">Inicio</Link>
+        <Link to="/servicios">Servicios</Link>
+        <Link to="/contacto">Contacto</Link>
       </nav>
 
-      {/* ICONOS DE REDES SOCIALES EN EL MENÚ DE ESCRITORIO */}
+      {/* ICONOS DE REDES SOCIALES */}
       <div className={styles.socialIcons}>
         <a href="#" className={styles.iconLink}>
           <FaFacebook className={styles.icon} />
@@ -47,11 +51,11 @@ export default function Nav() {
 
       {/* MENÚ MÓVIL */}
       <nav className={`${styles.mobileMenu} ${open ? styles.active : ""}`}>
-        <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Contacto</a>
+        <Link to="/" onClick={() => setOpen(false)}>Inicio</Link>
+        <Link to="/servicios" onClick={() => setOpen(false)}>Servicios</Link>
+        <Link to="/contacto" onClick={() => setOpen(false)}>Contacto</Link>
 
-        {/* ICONOS DE REDES SOCIALES EN EL MENÚ MÓVIL */}
+        {/* ICONOS REDES MOBILE */}
         <div className={styles.socialIconsMobile}>
           <a href="#" className={styles.iconLink}>
             <FaFacebook className={styles.icon} />

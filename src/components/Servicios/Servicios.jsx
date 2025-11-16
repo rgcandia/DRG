@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // <- Import Link
 import styles from "./Servicios.module.css";
 import { DesktopTower, Wrench, Globe } from "@phosphor-icons/react";
 import Nav from "../Nav/Nav";
@@ -12,18 +13,15 @@ const Servicios = () => {
 
         {/* HEADER: dragon a la izquierda + texto a la derecha */}
         <header className={styles.headerRow}>
-        
-
           <div className={styles.headerText}>
             <h1 className={styles.title}>Nuestros Servicios</h1>
             <p className={styles.lead}>
               Armados, reparaciones y desarrollo web con enfoque profesional.
               Soluciones a medida para gamers, empresas y usuarios domésticos.
             </p>
-
-         
           </div>
-            <div className={styles.imageWrap}>
+
+          <div className={styles.imageWrap}>
             <img
               src="/img/dragon-servicios.png"
               alt="Dragón servicios"
@@ -47,7 +45,7 @@ const Servicios = () => {
             <p>
               Equipos gamer y de oficina armados a medida. Elegimos los mejores componentes según tu presupuesto y necesidad.
             </p>
-            <a href="/armados-gamer" className={styles.btn}>Ver más</a>
+            <Link to="/armados-gamer" className={styles.btn}>Ver más</Link>
           </div>
 
           {/* === REPARACIÓN === */}
@@ -62,7 +60,7 @@ const Servicios = () => {
             <p>
               Limpieza profunda, mantenimiento, mejoras de rendimiento, diagnósticos y reparación de hardware/software.
             </p>
-            <a href="/reparacion" className={styles.btn}>Ver más</a>
+            <Link to="/reparacion" className={styles.btn}>Ver más</Link>
           </div>
 
           {/* === PÁGINAS WEB === */}
@@ -77,7 +75,7 @@ const Servicios = () => {
             <p>
               Sitios modernos, rápidos y a medida para PYMEs. Diseño responsive y optimización SEO básica.
             </p>
-            <a href="/webs" className={styles.btn}>Ver más</a>
+            <Link to="/webs" className={styles.btn}>Ver más</Link>
           </div>
 
         </div>
